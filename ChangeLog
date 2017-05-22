@@ -1,0 +1,95 @@
+2015-05-12  MainAccount  <arnaud@>
+
+	* spec.h:
+	* cellule.cpp:
+	* board.cpp (regen): 
+	- regénérer l'herbe au fur et à mesure et pas d'un seul coup ! (03/05/15) (12/05/15)
+
+2015-05-09  MainAccount  <arnaud@>
+
+	* main.cpp:
+	* spec.h:
+	- pouvoir accélérer/freiner le déroulement du temps avec les touches +/- (03/05/15) (09/05/15)
+
+2015-05-08  MainAccount  <arnaud@>
+
+	* individu.cpp:
+	* spec.h:
+	- avoir le nb de points de vie de départ en constante (03/05/15) (08/05/15)
+
+2015-05-06  MainAccount  <arnaud@>
+
+	* main.cpp: rajouter les jours à l'uptime (05/05/15) (06/05/15)
+
+2015-05-05  MainAccount  <arnaud@>
+
+	* main.cpp: convertir en heures et minutes l'uptime (26/04/15) (05/05/15)
+
+2015-04-30  MainAccount  <arnaud@>
+
+	* spec.h:
+	* main.cpp :
+	- affichage du terrain (herbe) dans la map (17/04/15) (30/04/15)
+
+2015-04-30  MainAccount  <arnaud@>
+
+	* board.h:
+	* board.cpp:
+	* main.cpp (interpret_command):
+	- nlle cmd pour redemarrer la pousse de l'herbe (16/04/15) (30/04/15)
+
+2015-04-26  MainAccount  <arnaud@>
+
+	* client.c:
+	* main.cpp:
+	- ajout d'une commande uptime pour savoir depuis combien de temps le serveur tourne (13/04/15) (20/04/15)
+	- ajout d'un message de bonne connection lorsque le client réseau se connecte (genre le pid, le thread Id, ...) (13/04/15) (20/04/15)
+
+2015-04-25  MainAccount  <arnaud@>
+
+	* main.cpp: pouvoir se connecter depuis plusieurs clients réseau en même temps (08/04/15) (25/04/15)
+
+2015-04-16  MainAccount  <arnaud@>
+
+	* board.h:
+	* board.cpp:
+	* main.cpp:
+	nlle cmd pour stopper la pousse de l'herbe (07/04/15) (16/04/15)
+
+	* watch_output.sh:
+	* read_inputs.sh:
+	definition globale et unique du nom des fichier de commandes (08/04/15) (16/04/15)
+
+2015-04-15  MainAccount  <arnaud@>
+
+	* textInterface.cpp:
+	* textInterface.h:
+	* Makefile (OBJECTS):
+	* main.cpp: logger dans des fichiers différents ( round / msg a part ) (01/04/15) (15/04/15)
+
+2015-04-14  MainAccount  <arnaud@> v1.1.1
+
+	* spec.h: 
+	* client.c:
+	- passer la taille de buffer de réponse en constante globale à tous les programmes (pt4 du bug #1)
+
+	* main.cpp:
+	- passer la taille de buffer de réponse en constante globale à tous les programmes (pt4 du bug #1)
+	- correction d'un plantage si on demandait un détachement de X11 alors qu'il l'était déjà
+	- ajout d'une commande d'aide (help)
+
+2015-04-13  MainAccount  <arnaud@> v1.1.0
+
+	* main.cpp:
+	- quitter sur un click droit (03/04/15)
+	- mode X11 détachable pour être démarré sans X11 sous coLinux (05/04/15) (13/04/15)
+		. ajout de l'option -nw pour le démarrage sans X11
+		. ajout de la touche X11 'd' pour détacher le display
+		. ajout de la commande detach pour détacher le display
+		. ajout de la commande attach pour réattacher le display (relance le thread WaitEvent)
+
+	- position des unites sur une carte (16/06/14)
+
+2015-04-03  MainAccount  <arnaud@> v1.0.0
+
+	* main.cpp: ajouter une commande exit pour le client fichier (03/04/15) (03/04/15)

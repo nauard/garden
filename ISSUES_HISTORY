@@ -1,0 +1,44 @@
+RESOLVED
+---------
+#7 "cannot bind socket" au lancement (08/04/15)
+   1. message d'erreur qui apparait au démarrage du prg principal et qui a comme conséquence que le client réseau ne peut pas s'y connecter
+   2. le prg principal ne libère pas tout de suite les sockets lorsqu'il se termine
+   3. libération dans la procédure de terminaison globale développée dans le #6
+   4. cf #3
+
+#6 world tourne même sans individus (01/04/15)
+   1. quand on kill un a un tous les ind. avec le client, le world continue de tourner à vide
+   2. le thread de traitement principal se termine mais les autres threads continuent de tourner !!
+   3. chaque thread lance une fin globale quand il a terminé
+   4. checker les conditions des threads
+
+#5 le client fichier ne répond plusieurs fois à la meme commande
+   -> résolu par le #3
+
+#4 parfois, le client réseau refuse de se connecter (03/04/15) (08/04/15)
+   1. arnaud@ganymede:~/local/garden/v_merged$ ./client 
+      impossible de se connecter a 127.0.0.1[5656]: Connection refused
+   2. arrive lorsque on arrête le prg principal, on ne quitte pas le client, on redémarre le prg principal (il doit protester sur le port qu'il ne peut pas binder) puis on quitte le client et on essaye d'en rouvrir un nouveau
+   3. mauvaise utilisation : lorsque le prg se termine, il faut quitter le client
+   4. provoquer la sortie du client réseau sur réception de la commande stopping
+
+#3 quand on tape plusieures cmds dans le client texte, il reste bloqué (03/04/15)
+   2. le client texte est bloqué en attente de la creation du fichier cmd_output, si celui-ci n'est pas là,
+il ne vient jamais lire les nouvelles cmdes
+   3. le fichier est dorénavant éffacé par le consommateur intéressé : le prg principal
+   4. n/a
+
+#1 réponses écourtées du client réseau (31/03/15) (03/04/15)
+  1. le client réseau ne renvoie que 7-8 ind. max
+  2. le buffer de réponse du client était limité à 256
+  3. il à été passé à 2048 en dynamique
+  4. passer cette taille en constante globale à tous les programmes
+  
+
+
+NOT REPRODUCED
+-----------------
+#2 le exit du client reseau fait planter le prg (03/04/15) (08/04/15)
+ERROR reading from socket: Connection reset by peer
+->  ajouter une ligne de log lorsqu'un client reseau se deconnecte
+    -> seems ok

@@ -1,0 +1,11 @@
+TODO
+------------------------------
+priorité - sujet - date de suggestion
+
+
+DONE
+------
+sujet - date de suggestion - date d'implémentation
+- retirer le repertoire v_merged (08/05/15) (15/05/15)
+- faire un save2NNP intelligent suivant la machine (08/05/15) (15/05/15)
+- faire un loadNNP identique (13/05/15) (15/05/15)
